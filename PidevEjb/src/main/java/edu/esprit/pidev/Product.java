@@ -32,6 +32,16 @@ public class Product implements Serializable {
 	public Product() {
 	}
 
+	public Product(String nom, float price, int quantity, String paymentWay,
+			String state) {
+		super();
+		this.nom = nom;
+		this.price = price;
+		this.quantity = quantity;
+		this.paymentWay = paymentWay;
+		this.state = state;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdProduct() {

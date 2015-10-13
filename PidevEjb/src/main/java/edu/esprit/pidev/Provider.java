@@ -3,10 +3,10 @@ package edu.esprit.pidev;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -25,7 +25,13 @@ public class Provider implements Serializable {
 		super();
 	}
 
+	public Provider(String nom) {
+		super();
+		this.nom = nom;
+	}
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return this.id;
 	}
@@ -54,7 +60,5 @@ public class Provider implements Serializable {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-	
-	
 
 }
